@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{48db2733-0522-4833-9460-6338be74ecad}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>setup.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId>Global|PythonCore|3.8</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="LICENSE.TXT" />
+    <Content Include="requirements.txt" />
+    <Content Include="tox.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clang\cindex.py" />
+    <Compile Include="clang\enumerations.py" />
+    <Compile Include="clang\__init__.py" />
+    <Compile Include="examples\cindex\cindex-dump.py" />
+    <Compile Include="examples\cindex\cindex-includes.py" />
+    <Compile Include="setup.py" />
+    <Compile Include="tests\cindex\test_access_specifiers.py" />
+    <Compile Include="tests\cindex\test_cdb.py" />
+    <Compile Include="tests\cindex\test_code_completion.py" />
+    <Compile Include="tests\cindex\test_comment.py" />
+    <Compile Include="tests\cindex\test_cursor.py" />
+    <Compile Include="tests\cindex\test_cursor_kind.py" />
+    <Compile Include="tests\cindex\test_diagnostics.py" />
+    <Compile Include="tests\cindex\test_exception_specification_kind.py" />
+    <Compile Include="tests\cindex\test_file.py" />
+    <Compile Include="tests\cindex\test_index.py" />
+    <Compile Include="tests\cindex\test_linkage.py" />
+    <Compile Include="tests\cindex\test_location.py" />
+    <Compile Include="tests\cindex\test_tls_kind.py" />
+    <Compile Include="tests\cindex\test_tokens.py" />
+    <Compile Include="tests\cindex\test_token_kind.py" />
+    <Compile Include="tests\cindex\test_translation_unit.py" />
+    <Compile Include="tests\cindex\test_type.py" />
+    <Compile Include="tests\cindex\util.py" />
+    <Compile Include="tests\cindex\__init__.py" />
+    <Compile Include="tests\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="clang" />
+    <Folder Include="examples\" />
+    <Folder Include="examples\cindex" />
+    <Folder Include="tests" />
+    <Folder Include="tests\cindex" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.8" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
